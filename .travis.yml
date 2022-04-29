@@ -4,3 +4,12 @@ services:
 script:
   - docker build -t danishprince/node .
   - docker images danishprince/node
+
+before_deploy:
+  -docker login -u danishprince -p 123456789
+
+deploy:
+  provider: script
+  script: docker push danishprince/node
+  on:
+    branch: master
