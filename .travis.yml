@@ -6,7 +6,7 @@ script:
   - docker images danishprince/node
 
 before_deploy:
-  -docker login -u danishprince -p 123456789
+  - docker login -u danishprince -p 123456789
 
 deploy:
   provider: script
